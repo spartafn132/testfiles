@@ -376,7 +376,7 @@ class Telegram(RPCHandler):
         :param msg: The message to extract the exchange name from.
         :return: The exchange name.
         """
-        return f"{msg['בורסה']}{' (דמו)' if self._config['dry_run'] else 'לייב'}"
+        return f"{msg['exchange']}{' (דמו)' if self._config['dry_run'] else 'לייב'}"
 
     def _add_analyzed_candle(self, pair: str) -> str:
         candle_val = (
